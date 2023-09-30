@@ -1,0 +1,101 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Koalas Favorite Food</title>
+<link href="css/lab5.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script>
+    $(function () {
+      "use strict";
+
+      $(".loc-photo img").click(function () {
+        var $src = $(this).attr("src");
+        var $capt = $(this).attr("title");
+        $(".show").fadeIn();
+        $(".img-show img").attr("src", $src);
+        document.getElementById("caption").innerText = $capt;
+      });
+
+      $("#close, .show").click(function () {
+        $(".show").fadeOut();
+      });
+      
+    });
+</script>
+<script>
+$(document).ready(function () {
+   const imgUrls = {
+      vas: 'https://images.pexels.com/photos/1596564/pexels-photo-1596564.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      anb: 'https://images.pexels.com/photos/316776/pexels-photo-316776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      tam: 'https://images.pexels.com/photos/3045635/pexels-photo-3045635.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+   }
+   const navItems = $('.nav li')
+   const imgBox = $('.banner-img')[0]
+   navItems.on('click', function (el) {
+      imgBox.src = imgUrls[el.target.id];
+   })
+})
+</script>
+</head>
+<body>
+
+<!-- The pop-up -->
+<div class="show">
+  <div class="overlay"></div>
+  <div class="img-show">
+    <span id="close">X</span>
+    <img src="">
+    <div id="caption"></div>    
+  </div>
+</div>
+
+<!-- The Gallery -->
+<h1 style="text-align: center;">Different jQuery Functions</h1>
+<p style="text-align: center;">Click to enlarge:</p>
+<div class="loc-photobox">
+  <div class="loc-photo grow">
+    <img src="https://images.pexels.com/photos/2156/sky-earth-space-working.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="space"
+         title="Astronaut in Space">
+  </div>
+  <div class="loc-photo grow">
+    <img src="https://images.pexels.com/photos/37072/abraham-lincoln-lincoln-memorial-washington-dc-lincoln.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="lincoln"
+         title="Lincoln">
+  </div>
+  <div class="loc-photo grow">
+    <img src="https://images.pexels.com/photos/60121/statue-of-liberty-new-york-ny-nyc-60121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="statue-of-liberty"
+         title="Statue of Liberty-">
+  </div>
+  <div class="loc-photo grow">
+    <img src="https://images.pexels.com/photos/2166/flight-sky-earth-space.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="nasa"
+         title="NASA">
+  </div>  
+</div>
+<br><br><br>
+<p style="text-align: center;">Hover to see text:</p>
+<br><br><br><br><br><br><br><br><br><br>
+<div class="container product-container">
+  <div class="product-box">
+    <div class="product-opacity"></div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG">
+    <div class="product-content">
+      <p class="text-center">Sweet Black Tea</p>
+    </div>
+  </div>
+</div>
+
+<p style="text-align: center;">Click to change image:</p>
+<div id="header">
+
+  <ul class="nav">
+    <li><a href="javascript:;" class="vas" id="vas" name="vas">Vasantha</a></li>
+    <li><a href="javascript:;" class="anb" id="anb" name="anb">Anbalagan</a></li>
+    <li><a href="javascript:;" class="tam" id="tam" name="tam">Tamilmani</a></li>
+  </ul>
+<div id="banner" style="text-align-last: center;">
+  <img class="banner-img" src="https://images.pexels.com/photos/4098987/pexels-photo-4098987.jpeg?cs=srgb&dl=pexels-taryn-elliott-4098987.jpg&fm=jpg">
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+ </body>
+</html>
